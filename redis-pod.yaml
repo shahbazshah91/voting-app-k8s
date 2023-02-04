@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-redis
+  labels:
+    app: votingapp
+    name: pod-redis
+    tier: back-end
+spec:
+  containers:
+    - name: redis-container
+      image: redis
+      ports:
+        - containerPort: 6379
