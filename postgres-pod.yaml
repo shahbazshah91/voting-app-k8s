@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-postgresql
+  labels:
+    app: votingapp
+    name: pod-postgresql
+    tier: back-end
+spec:
+  containers:
+    - name: postgresql-container
+      image: postgres
+      ports:
+        - containerPort: 5432
+      env:
+        - name: "POSTGRES_USER"
+          value: "postgres"
+        - name: "POSTGRES_PASSWORD"
+          value: "postgres"
